@@ -12,10 +12,6 @@ A Next.js 14+ E-commerce Store built, using the App Router, Context API, and Van
 - **Checkout Simulation:** A simple unvalidated checkout form mimicking a real order flow.
 - **Dark Mode Support:** CSS relies on standard media query preferring color schemes seamlessly.
 
-![Home Page Placeholder](./public/screenshots/home.png)
-![Product Detail Placeholder](./public/screenshots/product.png)
-![Cart Placeholder](./public/screenshots/cart.png)
-
 ## How to Run Locally
 
 You must have [Node.js](https://nodejs.org/) installed on your machine.
