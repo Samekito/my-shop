@@ -1,0 +1,194 @@
+[
+  {
+    "id": 1,
+    "title": "Classic Cotton Oxford Shirt",
+    "price": 45.00,
+    "description": "An essential wardrobe staple, this breathable 100% cotton Oxford shirt offers a clean, tailored fit for both casual and smart occasions.",
+    "category": "shirts",
+    "image": "/images/oxford_shirt.png",
+    "rating": {
+      "rate": 4.6,
+      "count": 230
+    }
+  },
+  {
+    "id": 2,
+    "title": "Premium Comfort Underwear Set",
+    "price": 28.00,
+    "description": "Experience all-day comfort with this 3-pack underwear set made from ultra-soft, moisture-wicking modal fabric.",
+    "category": "underwears",
+    "image": "/images/underwear_set.png",
+    "rating": {
+      "rate": 4.8,
+      "count": 410
+    }
+  },
+  {
+    "id": 3,
+    "title": "Tailored Chino Trousers",
+    "price": 55.00,
+    "description": "Versatile and comfortable, these tailored chinos feature a slight stretch and a refined cut that pairs perfectly with any shirt.",
+    "category": "trousers",
+    "image": "/images/chinos_trousers.png",
+    "rating": {
+      "rate": 4.5,
+      "count": 310
+    }
+  },
+  {
+    "id": 4,
+    "title": "Luxury Men's Perfume",
+    "price": 125.00,
+    "description": "An elegant and captivating fragrance, boasting woody undertones and luxurious citrus notes for any occasion.",
+    "category": "accessories",
+    "image": "/images/mens_perfume.png",
+    "rating": {
+      "rate": 4.9,
+      "count": 140
+    }
+  },
+  {
+    "id": 5,
+    "title": "Rugged Leather Boots",
+    "price": 140.00,
+    "description": "Hand-stitched genuine leather boots with a durable lug sole. Perfect for urban adventures and country trails alike.",
+    "category": "shoes",
+    "image": "/images/leather_boots.png",
+    "rating": {
+      "rate": 4.6,
+      "count": 215
+    }
+  },
+  {
+    "id": 6,
+    "title": "Winter Puffer Jacket",
+    "price": 175.00,
+    "description": "Stay warm in the harshest conditions with this thick, insulated puffer jacket featuring a weatherproof exterior.",
+    "category": "jackets",
+    "image": "/images/winter_jacket.png",
+    "rating": {
+      "rate": 4.8,
+      "count": 310
+    }
+  },
+  {
+    "id": 7,
+    "title": "Athletic Gym Shorts",
+    "price": 30.00,
+    "description": "Lightweight, breathable, and moisture-wicking black athletic shorts tailored for intense workouts.",
+    "category": "sportswear",
+    "image": "/images/gym_shorts.png",
+    "rating": {
+      "rate": 4.5,
+      "count": 412
+    }
+  },
+  {
+    "id": 8,
+    "title": "Nike Air Force 1 '07",
+    "price": 115.00,
+    "description": "The radiance lives on in the Nike Air Force 1 '07, the b-ball icon that puts a fresh spin on what you know best.",
+    "category": "sneakers",
+    "image": "/images/nike_af1.png",
+    "rating": {
+      "rate": 4.8,
+      "count": 120
+    }
+  },
+  {
+    "id": 9,
+    "title": "Adidas Ultraboost 22",
+    "price": 190.00,
+    "description": "Say hello to supreme energy return. These running shoes have a Linear Energy Push system for more responsiveness than ever before.",
+    "category": "sneakers",
+    "image": "/images/adidas_ultraboost.png",
+    "rating": {
+      "rate": 4.5,
+      "count": 350
+    }
+  },
+  {
+    "id": 10,
+    "title": "Air Jordan 1 Retro High",
+    "price": 180.00,
+    "description": "Familiar but always fresh, the iconic Air Jordan 1 is remastered for today's sneakerhead culture.",
+    "category": "sneakers",
+    "image": "/images/air_jordan_1.png",
+    "rating": {
+      "rate": 4.9,
+      "count": 520
+    }
+  },
+  {
+    "id": 11,
+    "title": "Puma RS-X³ Puzzle",
+    "price": 110.00,
+    "description": "X marks extreme. Exaggerated. Remixed. With its bulky design and fresh material mix, the RS-X³ is ready to step into a new dimension.",
+    "category": "sneakers",
+    "image": "/images/puma_rsx3.png",
+    "rating": {
+      "rate": 4.3,
+      "count": 89
+    }
+  },
+  {
+    "id": 12,
+    "title": "New Balance 550",
+    "price": 110.00,
+    "description": "The original 550 debuted in 1989 and made its mark on basketball courts from coast to coast.",
+    "category": "sneakers",
+    "image": "/images/new_balance_550.png",
+    "rating": {
+      "rate": 4.7,
+      "count": 210
+    }
+  },
+  {
+    "id": 13,
+    "title": "Converse Chuck Taylor All Star",
+    "price": 65.00,
+    "description": "The unmistakable canvas silhouette, the star-centered ankle patch and the cultural authenticity remain intact.",
+    "category": "sneakers",
+    "image": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=500&q=80",
+    "rating": {
+      "rate": 4.6,
+      "count": 1500
+    }
+  },
+  {
+    "id": 14,
+    "title": "Classic Leather Wallet",
+    "price": 40.00,
+    "description": "A slim, genuine leather wallet featuring multiple card slots, an ID window, and a spacious bill compartment.",
+    "category": "accessories",
+    "image": "/images/classic_wallet.png",
+    "rating": {
+      "rate": 4.8,
+      "count": 150
+    }
+  },
+  {
+    "id": 15,
+    "title": "Aviator Sunglasses",
+    "price": 85.00,
+    "description": "Timeless aviator shades that provide 100% UV protection and a polarized finish for reduced glare.",
+    "category": "accessories",
+    "image": "/images/aviator_sunglasses.png",
+    "rating": {
+      "rate": 4.5,
+      "count": 342
+    }
+  },
+  {
+    "id": 16,
+    "title": "Vintage Baseball Cap",
+    "price": 25.00,
+    "description": "A classic six-panel baseball cap with a pre-curved brim and an adjustable strap for the perfect fit.",
+    "category": "accessories",
+    "image": "/images/baseball_cap.png",
+    "rating": {
+      "rate": 4.3,
+      "count": 88
+    }
+  }
+]
