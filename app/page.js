@@ -6,14 +6,17 @@ import ProductCard from "./components/ProductCard";
 export default function Home() {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const itemsPerPage = 8;
 
   useEffect(() => {
     // Fetch products from the Fake Store API
     const fetchProducts = async () => {
       try {
-        const res = await fetch("https://fakestoreapi.com/products");
+        const res = await fetch("/data/products.json");
         if (!res.ok) throw new Error("Failed to fetch products");
         const data = await res.json();
         setProducts(data);
@@ -32,6 +35,13 @@ export default function Home() {
     product.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  // Pagination logic
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+  const displayedProducts = filteredProducts.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
   return (
     <div className="home-page animate-fade-in">
       <div className="header-section">
@@ -43,7 +53,10 @@ export default function Home() {
             type="text"
             placeholder="Search products by name..."
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={(e) => {
+              setSearchTerm(e.target.value);
+              setCurrentPage(1); // Reset to page 1 on search
+            }}
             className="input-field search-input"
           />
         </div>
@@ -67,12 +80,38 @@ export default function Home() {
         </div>
       )}
 
-      {!loading && !error && filteredProducts.length > 0 && (
-        <div className="product-grid">
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} priority />
-          ))}
-        </div>
+      {!loading && !error && displayedProducts.length > 0 && (
+        <>
+          <div className="product-grid">
+            {displayedProducts.map((product) => (
+              <ProductCard key={product.id} product={product} priority />
+            ))}
+          </div>
+          
+          {totalPages > 1 && (
+            <div className="pagination-controls" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '2rem' }}>
+              <button 
+                className="btn" 
+                onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                disabled={currentPage === 1}
+                style={{ opacity: currentPage === 1 ? 0.5 : 1, cursor: currentPage === 1 ? 'not-allowed' : 'pointer' }}
+              >
+                Previous
+              </button>
+              <span style={{ alignSelf: 'center', fontWeight: 'bold' }}>
+                Page {currentPage} of {totalPages}
+              </span>
+              <button 
+                className="btn btn-primary" 
+                onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                disabled={currentPage === totalPages}
+                style={{ opacity: currentPage === totalPages ? 0.5 : 1, cursor: currentPage === totalPages ? 'not-allowed' : 'pointer' }}
+              >
+                Next
+              </button>
+            </div>
+          )}
+        </>
       )}
 
     </div>
