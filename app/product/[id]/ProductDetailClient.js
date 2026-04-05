@@ -45,6 +45,9 @@ export default function ProductDetailClient({ id }) {
   if (error) return <div className="status-msg error">Error: {error}</div>;
   if (!product) return <div className="status-msg">Product not found</div>;
 
+  const basePath = typeof window !== 'undefined' && window.location.pathname.startsWith('/my-shop') ? '/my-shop' : '';
+  const imageSrc = product.image.startsWith('/') && !product.image.startsWith(basePath) ? `${basePath}${product.image}` : product.image;
+
   return (
     <div className="product-detail-page animate-fade-in">
       <Link href="/" className="back-link">
@@ -54,7 +57,7 @@ export default function ProductDetailClient({ id }) {
       <div className="detail-container">
         <div className="image-section">
           <Image
-            src={product.image}
+            src={imageSrc}
             alt={product.title}
             width={500}
             height={500}
