@@ -17,10 +17,12 @@ export default function ProductDetailClient({ id }) {
     // Fetch specific product by ID
     const fetchProduct = async () => {
       try {
-        const res = await fetch(`https://fakestoreapi.com/products/${id}`);
+        const res = await fetch("/data/products.json");
         if (!res.ok) throw new Error("Failed to load product details");
         const data = await res.json();
-        setProduct(data);
+        const foundProduct = data.find((p) => p.id.toString() === id.toString());
+        if (!foundProduct) throw new Error("Product not found");
+        setProduct(foundProduct);
       } catch (err) {
         setError(err.message);
       } finally {
