@@ -17,7 +17,8 @@ export default function ProductDetailClient({ id }) {
     // Fetch specific product by ID
     const fetchProduct = async () => {
       try {
-        const res = await fetch("/data/products.json");
+        const basePath = typeof window !== 'undefined' && window.location.pathname.startsWith('/my-shop') ? '/my-shop' : '';
+        const res = await fetch(`${basePath}/data/products.json`);
         if (!res.ok) throw new Error("Failed to load product details");
         const data = await res.json();
         const foundProduct = data.find((p) => p.id.toString() === id.toString());

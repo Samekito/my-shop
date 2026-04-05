@@ -13,10 +13,11 @@ export default function Home() {
   const itemsPerPage = 8;
 
   useEffect(() => {
-    // Fetch products from the Fake Store API
+    // Fetch products from the local JSON
     const fetchProducts = async () => {
       try {
-        const res = await fetch("/data/products.json");
+        const basePath = typeof window !== 'undefined' && window.location.pathname.startsWith('/my-shop') ? '/my-shop' : '';
+        const res = await fetch(`${basePath}/data/products.json`);
         if (!res.ok) throw new Error("Failed to fetch products");
         const data = await res.json();
         setProducts(data);
