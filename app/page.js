@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import ProductCard from "./components/ProductCard";
+import { withBasePath } from "./lib/basePath";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -16,8 +17,7 @@ export default function Home() {
     // Fetch products from the local JSON
     const fetchProducts = async () => {
       try {
-        const basePath = typeof window !== 'undefined' && window.location.pathname.startsWith('/my-shop') ? '/my-shop' : '';
-        const res = await fetch(`${basePath}/data/products.json`);
+        const res = await fetch(withBasePath("/data/products.json"));
         if (!res.ok) throw new Error("Failed to fetch products");
         const data = await res.json();
         setProducts(data);

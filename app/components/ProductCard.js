@@ -4,13 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import PropTypes from "prop-types";
 import { useCart } from "../context/CartContext";
+import { withBasePath } from "../lib/basePath";
 
 export default function ProductCard({ product, priority = false }) {
   const { addToCart } = useCart();
-
-  // Correct image path for GitHub pages sub-folder deployment
-  const basePath = typeof window !== 'undefined' && window.location.pathname.startsWith('/my-shop') ? '/my-shop' : '';
-  const imageSrc = product.image.startsWith('/') && !product.image.startsWith(basePath) ? `${basePath}${product.image}` : product.image;
+  const imageSrc = withBasePath(product.image);
 
   return (
     <div className="card animate-fade-in">
