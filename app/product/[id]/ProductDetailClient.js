@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PropTypes from "prop-types";
 import { useCart } from "../../context/CartContext";
+import { withBasePath } from "../../lib/basePath";
 
 export default function ProductDetailClient({ id }) {
   const [product, setProduct] = useState(null);
@@ -17,8 +18,7 @@ export default function ProductDetailClient({ id }) {
     // Fetch specific product by ID
     const fetchProduct = async () => {
       try {
-        const basePath = typeof window !== 'undefined' && window.location.pathname.startsWith('/my-shop') ? '/my-shop' : '';
-        const res = await fetch(`${basePath}/data/products.json`);
+        const res = await fetch(withBasePath("/data/products.json"));
         if (!res.ok) throw new Error("Failed to load product details");
         const data = await res.json();
         const foundProduct = data.find((p) => p.id.toString() === id.toString());
@@ -44,9 +44,7 @@ export default function ProductDetailClient({ id }) {
   if (loading) return <div className="status-msg">Loading product details...</div>;
   if (error) return <div className="status-msg error">Error: {error}</div>;
   if (!product) return <div className="status-msg">Product not found</div>;
-
-  const basePath = typeof window !== 'undefined' && window.location.pathname.startsWith('/my-shop') ? '/my-shop' : '';
-  const imageSrc = product.image.startsWith('/') && !product.image.startsWith(basePath) ? `${basePath}${product.image}` : product.image;
+  const imageSrc = withBasePath(product.image);
 
   return (
     <div className="product-detail-page animate-fade-in">

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "../context/CartContext";
+import { withBasePath } from "../lib/basePath";
 
 export default function Cart() {
   const { cart, removeFromCart, updateQuantity, cartTotal } = useCart();
@@ -29,7 +30,7 @@ export default function Cart() {
             <div key={item.id} className="cart-item">
               <div className="item-image-wrapper">
                 <Image
-                  src={item.image}
+                  src={withBasePath(item.image)}
                   alt={item.title}
                   width={80}
                   height={80}
